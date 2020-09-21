@@ -21,8 +21,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 package marshalsec;
-
-
 import java.io.IOException;
 import java.lang.reflect.Method;
 import java.util.Arrays;
@@ -33,7 +31,7 @@ import marshalsec.gadgets.Args;
 import marshalsec.gadgets.GadgetType;
 import marshalsec.gadgets.Primary;
 import marshalsec.gadgets.ToStringUtil;
-
+import marshalsec.gadgets.JDKUtil;
 
 /**
  * @author mbechler
@@ -52,7 +50,10 @@ public abstract class MarshallerBase <T> implements UtilFactory {
 
     public abstract Object unmarshal ( T data ) throws Exception;
 
-
+    @Override
+   	public  Object makeHashCodeTrigger ( Object o1 ) throws Exception {
+        return JDKUtil.makeMap(o1, o1);
+        }
     @Override
     public Object makeToStringTriggerUnstable ( Object obj ) throws Exception {
         return ToStringUtil.makeSpringAOPToStringTrigger(obj);

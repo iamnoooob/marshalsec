@@ -39,6 +39,7 @@ import marshalsec.gadgets.Rome;
 import marshalsec.gadgets.SpringAbstractBeanFactoryPointcutAdvisor;
 import marshalsec.gadgets.SpringPartiallyComparableAdvisorHolder;
 import marshalsec.gadgets.XBean;
+import marshalsec.gadgets.Groovy;
 
 
 /**
@@ -50,7 +51,7 @@ import marshalsec.gadgets.XBean;
  *
  */
 public abstract class HessianBase extends MarshallerBase<byte[]>
-        implements SpringPartiallyComparableAdvisorHolder, SpringAbstractBeanFactoryPointcutAdvisor, Rome, XBean, Resin {
+        implements SpringPartiallyComparableAdvisorHolder, SpringAbstractBeanFactoryPointcutAdvisor, Rome, XBean, Resin, Groovy {
 
     /**
      * {@inheritDoc}
